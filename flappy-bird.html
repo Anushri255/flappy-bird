@@ -44,11 +44,30 @@
             ctx.fillRect(birdX, birdY, birdWidth, birdHeight);
         }
 
+        function drawScore() {
+            ctx.fillStyle = "#000";
+            ctx.font = "20px Arial";
+            ctx.fillText("Score : " + score, 10, canvas.height - 20);
+        }
+
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            drawPipes();
             drawBird();
+            detectCollision();
+            updateScore();
+            drawScore();
             birdY += gravity;
             requestAnimationFrame(draw);
+        }
+        let score = 0;
+
+        function updateScore() {
+            for (let i = 0; i < pipes.length; i++) {
+                if (pipes[i].x === 5) {
+                    score++;
+                }
+            }
         }
 
         draw();
