@@ -50,6 +50,34 @@
             ctx.fillText("Score : " + score, 10, canvas.height - 20);
         }
 
+        const gap = 85;
+        const pipeWidth = 40;
+        const pipeHeight = 200; // Base height of the top pipe
+        const constant = pipeHeight + gap;
+        let pipes = [];
+
+        pipes[0] = {
+            x: canvas.width,
+            y: 0
+        };
+        function drawPipes() {
+            for (let i = 0; i < pipes.length; i++) {
+                ctx.fillStyle = "#228B22";
+                ctx.fillRect(pipes[i].x, pipes[i].y, pipeWidth, pipeHeight);
+
+                ctx.fillRect(pipes[i].x, pipes[i].y + constant, pipeWidth, canvas.height);
+
+                pipes[i].x--;
+
+                if (pipes[i].x === 125) {
+                    pipes.push({
+                        x: canvas.width,
+                        y: Math.floor(Math.random() * pipeHeight) - pipeHeight
+                    });
+                }
+            }
+        }
+
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             drawPipes();
