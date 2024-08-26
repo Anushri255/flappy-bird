@@ -2,6 +2,8 @@
 
 A simple Flappy Bird clone created using HTML and JavaScript. The game features basic mechanics where the player controls a bird and must navigate through pipes to score points. The game includes collision detection and score tracking.
 
+## Hosted on https://anushri255.github.io/flappy-bird.io/
+
 ## Features
 
 - **Start the Game**: The game starts automatically once the page loads.
@@ -38,3 +40,6 @@ To run the game:
 
 1. Save the provided HTML code into a file named `flappy-bird.html`.
 2. Open the file in a web browser to start playing.
+
+![image](https://github.com/user-attachments/assets/fc5ada3b-9380-4af8-af11-d518ce51baf7)
+
